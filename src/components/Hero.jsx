@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <section className={styles.hero}>
       <motion.h1
-        className={`${styles.headline} jitter`}
+        className={styles.headline}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 0.2, ease: 'easeOut' }}
