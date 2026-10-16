@@ -69,10 +69,6 @@ export default function About() {
       </motion.div>
 
       <div className={styles.marqueeWrap}>
-        <div className={styles.marqueeHeader}>
-          <span>things i work with</span>
-          <span>design · build · explore</span>
-        </div>
         <div className={styles.marquee}>
           <div className={styles.fade}>
             <div className={styles.track}>

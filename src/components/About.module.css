@@ -72,25 +72,6 @@
   margin-top: 6rem;
 }
 
-.marqueeHeader {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0 6vw 1.1rem;
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-}
-
-.marqueeHeader span:first-child {
-  color: var(--terracotta);
-}
-
-.marqueeHeader span:last-child {
-  color: var(--light-mid);
-}
-
 .marquee {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -179,11 +160,6 @@
   }
   .marqueeWrap {
     margin-top: 4rem;
-  }
-  .marqueeHeader {
-    padding: 0 1.25rem 1rem;
-    font-size: 0.62rem;
-    letter-spacing: 0.18em;
   }
   .marquee {
     padding: 1.25rem 0;
