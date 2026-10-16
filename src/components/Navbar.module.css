@@ -8,14 +8,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 2.5rem;
+  padding: 1.1rem 2.5rem;
 }
 
 .logo {
   font-family: 'Bricolage Grotesque', sans-serif;
   font-style: normal;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: var(--terracotta);
 }
 
@@ -40,7 +40,7 @@
 .resume {
   border: 1px solid var(--blush);
   border-radius: 100px;
-  padding: 0.4rem 0.9rem;
+  padding: 0.3rem 0.8rem;
 }
 
 .resume:hover {
@@ -49,10 +49,10 @@
 
 @media (max-width: 600px) {
   .header {
-    padding: 1.25rem;
+    padding: 0.9rem 1.25rem;
   }
   .logo {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   .links {
     gap: 0.9rem;
