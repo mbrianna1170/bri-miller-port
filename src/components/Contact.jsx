@@ -1,34 +1,24 @@
-import { motion } from 'framer-motion'
 import styles from './Contact.module.css'
 
 export default function Contact() {
   return (
-    <section id="contact" className={styles.section}>
-      <motion.div
-        className={styles.inner}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-      >
-        <p className={styles.eyebrow}>Let's connect</p>
-        <h2 className={styles.heading}>
-          Let's build something <br />
-          <em>great together.</em>
-        </h2>
-        <p className={styles.sub}>
-          My inbox is always open.
+    <>
+      <section id="contact" className={styles.section}>
+        <p className={styles.line}>
+          say hello: <a href="mailto:millerbri.08@gmail.com">millerbri.08@gmail.com</a>
         </p>
-        <a href="mailto:millerbri.08@gmail.com" className={styles.emailBtn}>
-          Say hello →
+        <a
+          href="https://www.linkedin.com/in/millerbri08/"
+          target="_blank"
+          rel="noreferrer"
+          className={styles.social}
+        >
+          linkedin
         </a>
-        <div className={styles.socials}>
-          <a href="https://www.linkedin.com/in/millerbri08/" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
-      </motion.div>
-      <div className={styles.footer}>
-        <p>© 2025 Bri Miller · Designed & built with love</p>
-      </div>
-    </section>
+      </section>
+      <footer className={styles.footer}>
+        <p>thanks for stopping by bri's page — come back soon</p>
+      </footer>
+    </>
   )
 }

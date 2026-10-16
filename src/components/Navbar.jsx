@@ -3,18 +3,14 @@ import styles from './Navbar.module.css'
 
 export default function Navbar() {
   return (
-    <motion.nav
-      className={styles.nav}
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}
+    <motion.header
+      className={styles.header}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.6 }}
     >
-      <span className={styles.logo}>bri miller</span>
-      <div className={styles.links}>
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </motion.nav>
+      <a href="#" className={styles.logo}>bri miller</a>
+      <a href="mailto:millerbri.08@gmail.com" className={styles.email}>millerbri.08@gmail.com</a>
+    </motion.header>
   )
 }

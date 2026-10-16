@@ -3,13 +3,43 @@ import { motion, AnimatePresence } from 'framer-motion'
 import styles from './Hero.module.css'
 
 const WORDS = ['return to.', 'trust.', 'enjoy.']
-const INTERVAL = 1600
+const INTERVAL = 2000
 
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 30 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.7, delay, ease: 'easeOut' },
-})
+// the main line plus two fading "echoes" underneath it
+const LINES = [
+  { className: styles.main, delay: 0.2 },
+  { className: styles.echo1, delay: 0.55 },
+  { className: styles.echo2, delay: 0.8 },
+]
+
+function HeroLine({ word, wordKey, className, delay, ariaHidden }) {
+  return (
+    <motion.p
+      className={`${styles.line} ${className} jitter`}
+      style={{ animationDelay: `${delay}s` }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay, ease: 'easeOut' }}
+      aria-hidden={ariaHidden}
+    >
+      hi, i'm bri and i design experiences people{' '}
+      <span className={styles.wordWrapper}>
+        <AnimatePresence mode="wait">
+          <motion.em
+            key={wordKey}
+            className={styles.word}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.35, ease: 'easeInOut' }}
+          >
+            {word}
+          </motion.em>
+        </AnimatePresence>
+      </span>
+    </motion.p>
+  )
+}
 
 export default function Hero() {
   const [index, setIndex] = useState(0)
@@ -23,44 +53,27 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
-      <div className={styles.inner}>
-        <motion.p className={styles.eyebrow} {...fadeUp(0.2)}>
-          UX/UI Designer 📍 based wherever Wi-Fi is good
-        </motion.p>
-        <motion.h1 className={styles.headline} {...fadeUp(0.4)}>
-          Designing experiences <br />
-          <span className={styles.rotatingLine}>
-            people{' '}
-            <span className={styles.rotatingWrapper}>
-              <AnimatePresence mode="wait">
-                <motion.em
-                  key={index}
-                  className={styles.rotatingWord}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -16 }}
-                  transition={{ duration: 0.35, ease: 'easeInOut' }}
-                >
-                  {WORDS[index]}
-                </motion.em>
-              </AnimatePresence>
-            </span>
-          </span>
-        </motion.h1>
-        <motion.p className={styles.sub} {...fadeUp(0.6)}>
-          I blend user insight with bold, intentional design to build things that feel as good as they look.
-        </motion.p>
-        <motion.div className={styles.cta} {...fadeUp(0.8)}>
-          <a href="#work" className={styles.btnPrimary}>See my work ↓</a>
-          <a href="#contact" className={styles.btnSecondary}>Get in touch</a>
-        </motion.div>
+      <h1 className={styles.srOnly}>Bri Miller, UX/UI designer</h1>
+      <div className={styles.lines}>
+        {LINES.map((line, i) => (
+          <HeroLine
+            key={i}
+            word={WORDS[index]}
+            wordKey={index}
+            className={line.className}
+            delay={line.delay}
+            ariaHidden={i > 0}
+          />
+        ))}
       </div>
-
-      <motion.div
-        className={styles.blob}
-        animate={{ scale: [1, 1.05, 1], rotate: [0, 6, 0] }}
-        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
-      />
+      <motion.p
+        className={styles.tagline}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
+      >
+        ux/ui designer · based wherever wi-fi is good
+      </motion.p>
     </section>
   )
 }
