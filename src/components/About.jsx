@@ -23,11 +23,7 @@ export default function About() {
         <img src={briPhoto} alt="Bri Miller" className={styles.photo} />
         <div className={styles.lines}>
           {LINES.map((line, i) => (
-            <p
-              key={i}
-              className={`${styles.line} jitter`}
-              style={{ animationDelay: `${[0, 0.4, 1.1][i]}s` }}
-            >
+            <p key={i} className={styles.line}>
               {line}
             </p>
           ))}
