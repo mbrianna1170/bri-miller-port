@@ -15,7 +15,7 @@ export default function Navbar() {
         <a href="#about">about</a>
         <a href="#contact">contact</a>
         <a href="/resume.pdf" target="_blank" rel="noreferrer" className={styles.resume}>
-          resume <span aria-hidden="true">↗</span>
+          resume
         </a>
       </nav>
     </motion.header>
