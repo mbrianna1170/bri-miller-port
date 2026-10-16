@@ -7,14 +7,15 @@
   gap: 3.5rem;
 }
 
+/* one line on desktop: the sentence is ~20.4x its font size wide,
+   so 4.1vw fills about 84% of the screen */
 .headline {
-  max-width: 1050px;
-  font-size: clamp(1.9rem, 5.2vw, 4.25rem);
+  font-size: min(4.1vw, 4.5rem);
   font-weight: 300;
   letter-spacing: -0.01em;
   line-height: 1.2;
   color: var(--deep);
-  text-wrap: balance;
+  white-space: nowrap;
 }
 
 .wordWrapper {
@@ -49,6 +50,15 @@
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--terracotta);
+}
+
+/* too small to read on one line, so let it wrap */
+@media (max-width: 760px) {
+  .headline {
+    font-size: clamp(1.9rem, 7vw, 2.6rem);
+    white-space: normal;
+    text-wrap: balance;
+  }
 }
 
 @media (max-width: 600px) {
