@@ -1,24 +1,37 @@
 import { motion } from 'framer-motion'
 import styles from './ProjectCard.module.css'
 
+// one featured project: big image on one side, context + CTA on the other.
+// every other project flips sides so the section reads like a spread.
 export default function ProjectCard({ project, index }) {
+  const flipped = index % 2 === 1
+
   return (
-    <motion.a
-      href={`#${project.slug}`}
-      className={styles.item}
+    <motion.article
+      className={`${styles.feature} ${flipped ? styles.flipped : ''}`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-60px' }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeOut' }}
+      viewport={{ once: true, margin: '-80px' }}
+      transition={{ duration: 0.7, ease: 'easeOut' }}
     >
-      <div className={styles.thumb}>
+      <a
+        href={`#${project.slug}`}
+        className={`${styles.media} ${project.imageFit === 'contain' ? styles.contain : ''}`}
+        aria-label={`${project.title} case study`}
+      >
         <img src={project.image} alt={project.title} className={styles.img} />
-        <span className={styles.view}>view case study</span>
+      </a>
+
+      <div className={styles.info}>
+        <p className={styles.number}>{String(index + 1).padStart(2, '0')}</p>
+        <h3 className={styles.title}>{project.title}</h3>
+        <p className={styles.category}>{project.category}</p>
+        <p className={styles.description}>{project.description}</p>
+        <p className={styles.tags}>{project.tags.join(' · ')}</p>
+        <a href={`#${project.slug}`} className={styles.cta}>
+          read case study <span aria-hidden="true">→</span>
+        </a>
       </div>
-      <div className={styles.meta}>
-        <span className={styles.title}>{project.title}</span>
-        <span className={styles.category}>{project.category.toLowerCase()}</span>
-      </div>
-    </motion.a>
+    </motion.article>
   )
 }

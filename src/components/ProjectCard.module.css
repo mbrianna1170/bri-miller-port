@@ -1,15 +1,24 @@
-.item {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  color: var(--deep);
+.feature {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  background: var(--warm-white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
 }
 
-.thumb {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 10;
-  border-radius: 6px;
+/* image on the right instead of the left */
+.flipped {
+  grid-template-columns: 2fr 3fr;
+}
+
+.flipped .media {
+  order: 2;
+}
+
+.media {
+  display: block;
+  min-height: 420px;
   overflow: hidden;
   background: var(--card-bg);
 }
@@ -19,53 +28,115 @@
   height: 100%;
   object-fit: cover;
   object-position: left top;
-  transition: transform 0.6s ease, opacity 0.3s ease;
+  transition: transform 0.7s ease;
 }
 
-.view {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background: rgba(255, 249, 244, 0.95);
-  color: var(--deep);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  padding: 0.8rem 1.4rem;
-  border-radius: 100px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  white-space: nowrap;
-}
-
-.item:hover .img {
+.feature:hover .img {
   transform: scale(1.03);
-  opacity: 0.85;
 }
 
-.item:hover .view {
-  opacity: 1;
+/* screenshots: shown whole, floating on a soft backdrop */
+.contain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem;
+  background: linear-gradient(135deg, var(--card-bg), #F7DCCD);
 }
 
-.meta {
+.contain .img {
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 18px 40px rgba(44, 36, 32, 0.12);
+}
+
+.info {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.3rem;
-  text-align: center;
+  justify-content: center;
+  padding: 3rem 3.25rem;
+}
+
+.number {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--terracotta);
+  margin-bottom: 1.25rem;
 }
 
 .title {
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  font-size: clamp(1.75rem, 2.6vw, 2.4rem);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
   color: var(--deep);
 }
 
 .category {
-  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 400;
   color: var(--light-mid);
+}
+
+.description {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--mid);
+}
+
+.tags {
+  margin-top: 1.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--light-mid);
+}
+
+.cta {
+  align-self: flex-start;
+  margin-top: 2rem;
+  padding: 0.65rem 1.4rem;
+  border: 1px solid var(--terracotta);
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--terracotta);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.cta span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.cta:hover {
+  background: var(--terracotta);
+  color: var(--warm-white);
+}
+
+.cta:hover span {
+  transform: translateX(3px);
+}
+
+@media (max-width: 860px) {
+  .feature,
+  .flipped {
+    grid-template-columns: 1fr;
+  }
+  .flipped .media {
+    order: 0;
+  }
+  .media {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+  .info {
+    padding: 2rem 1.5rem 2.25rem;
+  }
 }

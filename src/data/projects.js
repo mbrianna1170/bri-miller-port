@@ -18,6 +18,8 @@ const projects = [
     description: 'A coded website for a dog boarding business, designed to help pet owners browse services, build trust, and book with confidence.',
     tags: ['UI Design', 'HTML/CSS', 'Web Design'],
     image: campWoofsMockup,
+    // wide website screenshot: show it whole instead of cropping to fill
+    imageFit: 'contain',
     slug: 'camp-woofs-wiggles',
   },
 ]
