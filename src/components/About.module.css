@@ -18,7 +18,7 @@
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
-  box-shadow: 0 0 0 6px var(--cream), 0 0 0 12px var(--blush);
+  box-shadow: 0 0 0 6px var(--cream), 0 0 0 12px var(--terracotta);
 }
 
 .lines {
