@@ -8,9 +8,9 @@
 }
 
 /* one line on desktop: the sentence is ~20.4x its font size wide,
-   so 4.1vw fills about 84% of the screen */
+   so it scales down with the screen until it hits 2.9rem (~46px) */
 .headline {
-  font-size: min(4.1vw, 4.5rem);
+  font-size: min(4.1vw, 2.9rem);
   font-weight: 300;
   letter-spacing: -0.01em;
   line-height: 1.2;
@@ -46,7 +46,7 @@
 
 .tagline {
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--terracotta);

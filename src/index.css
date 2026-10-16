@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -52,7 +52,7 @@ img {
 /* small, wide-spaced uppercase section labels */
 .section-label {
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.4em;
   text-transform: uppercase;
   color: var(--mid);
