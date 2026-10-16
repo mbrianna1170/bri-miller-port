@@ -22,6 +22,16 @@ const projects = [
     imageFit: 'contain',
     slug: 'camp-woofs-wiggles',
   },
+  {
+    // PLACEHOLDER: swap in the real project details and image when ready
+    id: 3,
+    title: 'Project Three',
+    category: 'Project Type',
+    description: 'A short summary of the project goes here: who it was for, the problem it solved, and what you designed.',
+    tags: ['Skill One', 'Skill Two', 'Tool'],
+    image: null,
+    slug: 'project-three',
+  },
 ]
 
 export default projects

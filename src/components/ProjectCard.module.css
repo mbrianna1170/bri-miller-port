@@ -35,6 +35,21 @@
   transform: scale(1.03);
 }
 
+/* stand-in until a project has its image */
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: inherit;
+  background: linear-gradient(135deg, var(--card-bg), #F7DCCD);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--light-mid);
+}
+
 /* screenshots: shown whole, floating on a soft backdrop */
 .contain {
   display: flex;

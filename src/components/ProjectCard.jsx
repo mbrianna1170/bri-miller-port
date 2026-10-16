@@ -19,7 +19,10 @@ export default function ProjectCard({ project, index }) {
         className={`${styles.media} ${project.imageFit === 'contain' ? styles.contain : ''}`}
         aria-label={`${project.title} case study`}
       >
-        <img src={project.image} alt={project.title} className={styles.img} />
+        {project.image
+          ? <img src={project.image} alt={project.title} className={styles.img} />
+          : <span className={styles.placeholder}>image coming soon</span>
+        }
       </a>
 
       <div className={styles.info}>
