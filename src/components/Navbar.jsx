@@ -10,7 +10,14 @@ export default function Navbar() {
       transition={{ duration: 0.6 }}
     >
       <a href="#" className={styles.logo}>bri miller</a>
-      <a href="mailto:millerbri.08@gmail.com" className={styles.email}>millerbri.08@gmail.com</a>
+      <nav className={styles.links}>
+        <a href="#work">work</a>
+        <a href="#about">about</a>
+        <a href="#contact">contact</a>
+        <a href="/resume.pdf" target="_blank" rel="noreferrer" className={styles.resume}>
+          resume <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
     </motion.header>
   )
 }

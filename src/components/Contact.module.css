@@ -23,6 +23,11 @@
   color: var(--terracotta);
 }
 
+.socials {
+  display: flex;
+  gap: 2rem;
+}
+
 .social {
   font-size: 0.7rem;
   font-weight: 500;
