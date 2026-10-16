@@ -1,0 +1,25 @@
+import bowlsomeMockup from '../assets/bowlsome-mockup.png'
+import campWoofsMockup from '../assets/camp-woofs-mockup.png'
+
+const projects = [
+  {
+    id: 1,
+    title: 'Bowlsome Smoothie',
+    category: 'Ordering Kiosk App',
+    description: 'An ordering kiosk app designed to make the smoothie bowl experience fast, intuitive, and fun — from customization to checkout.',
+    tags: ['UX Design', 'Interaction Design', 'Figma'],
+    image: bowlsomeMockup,
+    slug: 'bowlsome-smoothie',
+  },
+  {
+    id: 2,
+    title: 'Camp Woofs & Wiggles',
+    category: 'Dog Boarding Website',
+    description: 'A coded website for a dog boarding business, designed to help pet owners browse services, build trust, and book with confidence.',
+    tags: ['UI Design', 'HTML/CSS', 'Web Design'],
+    image: campWoofsMockup,
+    slug: 'camp-woofs-wiggles',
+  },
+]
+
+export default projects

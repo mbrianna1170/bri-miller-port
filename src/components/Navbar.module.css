@@ -1,0 +1,49 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 4rem;
+  background-color: rgba(250, 247, 242, 0.85);
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--terracotta);
+  letter-spacing: 0.01em;
+}
+
+.links {
+  display: flex;
+  gap: 2.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--mid);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.links a {
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: var(--terracotta);
+}
+
+@media (max-width: 640px) {
+  .nav {
+    padding: 1rem 1.5rem;
+  }
+  .links {
+    gap: 1.25rem;
+    font-size: 0.8rem;
+  }
+}

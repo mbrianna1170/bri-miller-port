@@ -1,0 +1,91 @@
+.section {
+  padding: 6rem 4rem 0;
+  background-color: var(--deep);
+  color: var(--cream);
+}
+
+.inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 5rem;
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  color: var(--cream);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.sub {
+  font-size: 1rem;
+  color: var(--light-mid);
+  line-height: 1.7;
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+
+.emailBtn {
+  display: inline-block;
+  background-color: var(--terracotta);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.2s;
+  margin-bottom: 2rem;
+}
+
+.emailBtn:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--light-mid);
+}
+
+.socials a {
+  color: var(--light-mid);
+  transition: color 0.2s;
+}
+
+.socials a:hover {
+  color: var(--cream);
+}
+
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--light-mid);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4rem 1.5rem 0;
+  }
+}
