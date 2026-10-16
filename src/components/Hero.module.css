@@ -3,34 +3,18 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: calc(18vh + 2rem) 6vw 8vh;
-  gap: 3rem;
+  padding: calc(20vh + 2rem) 6vw 14vh;
+  gap: 3.5rem;
 }
 
-.lines {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  max-width: 1000px;
-}
-
-.line {
-  font-size: clamp(1.4rem, 3.6vw, 2.5rem);
+.headline {
+  max-width: 1050px;
+  font-size: clamp(1.9rem, 5.2vw, 4.25rem);
   font-weight: 300;
-  letter-spacing: 0.01em;
-  line-height: 1.3;
-}
-
-.main {
+  letter-spacing: -0.01em;
+  line-height: 1.2;
   color: var(--deep);
-}
-
-.echo1 {
-  color: var(--ghost);
-}
-
-.echo2 {
-  color: var(--ghost-faint);
+  text-wrap: balance;
 }
 
 .wordWrapper {
@@ -41,10 +25,7 @@
   display: inline-block;
   font-family: 'Bricolage Grotesque', sans-serif;
   font-style: normal;
-  font-weight: 600;
-}
-
-.main .word {
+  font-weight: 500;
   color: var(--terracotta);
 }
 
@@ -56,21 +37,9 @@
   color: var(--terracotta);
 }
 
-.srOnly {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
 @media (max-width: 600px) {
   .hero {
-    padding-top: 9rem;
-  }
-  .echo1,
-  .echo2 {
-    display: none;
+    padding: 9rem 1.5rem 10vh;
+    gap: 2.5rem;
   }
 }
