@@ -4,9 +4,29 @@
   margin: 0 auto;
 }
 
+/* outlined title bar, same corners as the project blocks below */
+.banner {
+  border: 2px solid var(--terracotta);
+  border-radius: 14px;
+  padding: 1.6rem 1rem;
+  text-align: center;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--deep);
+}
+
 .grid {
   display: flex;
   flex-direction: column;
   gap: 3.5rem;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 600px) {
+  .banner {
+    padding: 1.2rem 0.75rem;
+    letter-spacing: 0.25em;
+  }
 }
