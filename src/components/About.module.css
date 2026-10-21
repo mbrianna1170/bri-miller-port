@@ -1,38 +1,39 @@
 .section {
-  padding: 10vh 0 8vh;
+  padding: 6vh 0 8vh;
 }
 
+/* same width as the featured work section, so both banners line up */
 .inner {
-  max-width: 760px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 6vw;
-  display: flex;
-  flex-direction: column;
+}
+
+/* photo on the left, words on the right */
+.content {
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
-  text-align: center;
+  gap: 5rem;
+  margin-top: 4rem;
+  padding: 0 3rem;
 }
 
 .photo {
-  width: 170px;
-  height: 170px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center top;
-  box-shadow: 0 0 0 6px var(--cream), 0 0 0 12px var(--terracotta);
+  box-shadow: 0 0 0 7px var(--cream), 0 0 0 14px var(--terracotta);
 }
 
-.label {
-  margin-top: 2.75rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--terracotta);
+.text {
+  max-width: 600px;
 }
 
 .headline {
-  margin-top: 1rem;
-  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
   font-weight: 300;
   letter-spacing: -0.01em;
   line-height: 1.2;
@@ -47,11 +48,10 @@
 }
 
 .body {
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
-  max-width: 620px;
   font-size: 1.05rem;
   font-weight: 300;
   line-height: 1.75;
@@ -59,11 +59,27 @@
 }
 
 .signoff {
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
   font-size: 1rem;
   font-style: italic;
   font-weight: 400;
   color: var(--terracotta);
+}
+
+/* stack: photo on top, text centered underneath */
+@media (max-width: 860px) {
+  .content {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 2.75rem;
+    margin-top: 3rem;
+    padding: 0;
+  }
+  .photo {
+    width: 190px;
+    height: 190px;
+  }
 }
 
 /* ---------- skills marquee ---------- */

@@ -59,3 +59,34 @@ img {
   text-align: center;
 }
 
+
+/* outlined coral title bar that opens a section (featured work, about me) */
+.section-banner {
+  border: 2px solid var(--terracotta);
+  border-radius: 14px;
+  padding: 1.6rem 1rem;
+  text-align: center;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--deep);
+}
+
+/* small lowercase aside above a banner title, e.g. "(a little)" */
+.section-banner .kicker {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: none;
+  color: var(--terracotta);
+}
+
+@media (max-width: 600px) {
+  .section-banner {
+    padding: 1.2rem 0.75rem;
+    letter-spacing: 0.25em;
+  }
+}

@@ -39,34 +39,42 @@ function SkillRun({ hidden }) {
 export default function About() {
   return (
     <section id="about" className={styles.section}>
-      <motion.div
-        className={styles.inner}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-80px' }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
-      >
-        <img src={briPhoto} alt="Bri Miller" className={styles.photo} />
-
-        <p className={styles.label}>a little about me</p>
-        <h2 className={styles.headline}>
-          creative by nature. <span className={styles.accent}>intentional by design.</span>
+      <div className={styles.inner}>
+        <h2 className="section-banner">
+          <span className="kicker">(a little)</span>
+          about me
         </h2>
 
-        <div className={styles.body}>
-          <p>
-            i'm a UX/UI designer with a background in customer experience and an eye for the
-            little details. years of listening to customers, solving problems, and spotting
-            patterns shaped how i approach design today.
-          </p>
-          <p>
-            i believe the best experiences balance thoughtful functionality with a little
-            unexpected delight.
-          </p>
-        </div>
+        <motion.div
+          className={styles.content}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+        >
+          <img src={briPhoto} alt="Bri Miller" className={styles.photo} />
 
-        <p className={styles.signoff}>p.s. ask me about chick-fil-a's ketchup packets.</p>
-      </motion.div>
+          <div className={styles.text}>
+            <h3 className={styles.headline}>
+              creative by nature. <span className={styles.accent}>intentional by design.</span>
+            </h3>
+
+            <div className={styles.body}>
+              <p>
+                i'm a UX/UI designer with a background in customer experience and an eye for the
+                little details. years of listening to customers, solving problems, and spotting
+                patterns shaped how i approach design today.
+              </p>
+              <p>
+                i believe the best experiences balance thoughtful functionality with a little
+                unexpected delight.
+              </p>
+            </div>
+
+            <p className={styles.signoff}>p.s. ask me about chick-fil-a's ketchup packets.</p>
+          </div>
+        </motion.div>
+      </div>
 
       <div className={styles.marqueeWrap}>
         <div className={styles.marquee}>
