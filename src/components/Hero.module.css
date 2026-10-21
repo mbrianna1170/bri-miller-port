@@ -19,13 +19,6 @@
   opacity: 0.7;
 }
 
-.arrow svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-
 /* one line on desktop: the sentence is ~20.4x its font size wide,
    so it scales down with the screen until it hits 2.9rem (~46px) */
 .headline {

@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
 import briPhoto from '../assets/bri.jpg'
+import LoopyArrow from './LoopyArrow'
 import styles from './About.module.css'
 
 const SKILLS = [
-  'Figma',
   'User Research',
   'Wireframing',
   'Prototyping',
@@ -11,6 +11,7 @@ const SKILLS = [
   'Visual Design',
   'HTML & CSS',
   'JavaScript',
+  'Figma',
   'AI-Assisted Design & Development',
 ]
 
@@ -70,15 +71,15 @@ export default function About() {
                 unexpected delight.
               </p>
             </div>
-
-            <a href="mailto:millerbri.08@gmail.com" className={styles.cta}>
-              let's chat <span aria-hidden="true">→</span>
-            </a>
           </div>
         </motion.div>
       </div>
 
       <div className={styles.marqueeWrap}>
+        <div className={styles.skillsIntro}>
+          <LoopyArrow onView className={styles.smallArrow} />
+          <h3 className={styles.skillsLabel}>skills &amp; tools</h3>
+        </div>
         <div className={styles.marquee}>
           <div className={styles.fade}>
             <div className={styles.track}>

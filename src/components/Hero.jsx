@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import LoopyArrow from './LoopyArrow'
 import styles from './Hero.module.css'
 
 const WORDS = ['return to.', 'trust.', 'enjoy.']
@@ -52,30 +53,7 @@ export default function Hero() {
         ux/ui designer · based wherever wi-fi is good
       </motion.p>
       <a href="#work" className={styles.arrow} aria-label="Scroll to featured work">
-        <motion.svg
-          viewBox="0 0 100 160"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="3.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut', delay: 3 }}
-        >
-          {/* loopy line draws itself in, then the arrowhead pops on */}
-          <motion.path
-            d="M22 14 C 58 6, 84 38, 72 76 C 66 96, 40 104, 36 90 C 32 76, 54 72, 62 90 C 70 106, 72 126, 74 146"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{ duration: 1.4, delay: 1.2, ease: 'easeInOut' }}
-          />
-          <motion.path
-            d="M63 134 L 74 147 L 84 133"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3, delay: 2.5 }}
-          />
-        </motion.svg>
+        <LoopyArrow delay={1.2} bob />
       </a>
     </section>
   )
