@@ -58,12 +58,31 @@
   color: var(--mid);
 }
 
-.signoff {
-  margin-top: 1.5rem;
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: 400;
+/* same pill as the "read case study" buttons */
+.cta {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.65rem 1.4rem;
+  border: 1px solid var(--terracotta);
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 500;
   color: var(--terracotta);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.cta span {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.cta:hover {
+  background: var(--terracotta);
+  color: var(--warm-white);
+}
+
+.cta:hover span {
+  transform: translateX(3px);
 }
 
 /* stack: photo on top, text centered underneath */

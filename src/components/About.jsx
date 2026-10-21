@@ -56,7 +56,7 @@ export default function About() {
 
           <div className={styles.text}>
             <h3 className={styles.headline}>
-              creative by nature. <span className={styles.accent}>intentional by design.</span>
+              curious about the why. <span className={styles.accent}>creative with the how.</span>
             </h3>
 
             <div className={styles.body}>
@@ -71,7 +71,9 @@ export default function About() {
               </p>
             </div>
 
-            <p className={styles.signoff}>p.s. ask me about chick-fil-a's ketchup packets.</p>
+            <a href="mailto:millerbri.08@gmail.com" className={styles.cta}>
+              let's chat <span aria-hidden="true">→</span>
+            </a>
           </div>
         </motion.div>
       </div>
