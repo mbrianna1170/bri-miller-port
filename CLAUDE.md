@@ -63,6 +63,6 @@ Personal portfolio for Bri Miller, a UX/UI designer. React 19 + Vite, styled wit
 ## Open to-dos
 
 - `public/resume.pdf` doesn't exist yet. The nav, contact and footer resume links all point to `/resume.pdf`.
-- "read case study →" buttons link to `#slug` anchors that don't exist. **Next up: building case study pages** in this repo (same nav/footer/design), likely via a router so each lives at its own URL (e.g. `/bowlsome-smoothie`).
+- **Case studies:** template in `src/pages/CaseStudy.jsx` + `src/components/caseStudy/`, content in `src/data/caseStudies/<slug>.js` (listed in `index.js`). Pages load at `/<slug>` via a plain pathname check in `App.jsx` (no router). Camp Woofs & Wiggles is built; its reflection cards, UI-elements crop, design-decision screenshots and most final screens are labeled placeholders, and lines marked DRAFT need Bri's wording. Bowlsome and Project 3 still link to `#slug`. Hosting will need an SPA fallback (every path serves `index.html`).
 - Project 3 needs real details and an image.
 - Large images (~3.7MB each) should be compressed before launch.
