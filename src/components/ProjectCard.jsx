@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion'
+import caseStudies from '../data/caseStudies'
 import styles from './ProjectCard.module.css'
 
 // one featured project: big image on one side, context + CTA on the other.
 // every other project flips sides so the section reads like a spread.
 export default function ProjectCard({ project, index }) {
   const flipped = index % 2 === 1
+  // projects with a written case study open its page; the rest stay put for now
+  const href = caseStudies[project.slug] ? `/${project.slug}` : `#${project.slug}`
 
   return (
     <motion.article
@@ -15,7 +18,7 @@ export default function ProjectCard({ project, index }) {
       transition={{ duration: 0.7, ease: 'easeOut' }}
     >
       <a
-        href={`#${project.slug}`}
+        href={href}
         className={`${styles.media} ${project.imageFit === 'contain' ? styles.contain : ''}`}
         aria-label={`${project.title} case study`}
       >
@@ -31,7 +34,7 @@ export default function ProjectCard({ project, index }) {
         <p className={styles.category}>{project.category}</p>
         <p className={styles.description}>{project.description}</p>
         <p className={styles.tags}>{project.tags.join(' · ')}</p>
-        <a href={`#${project.slug}`} className={styles.cta}>
+        <a href={href} className={styles.cta}>
           read case study <span aria-hidden="true">→</span>
         </a>
       </div>
