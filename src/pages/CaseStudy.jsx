@@ -55,9 +55,9 @@ export default function CaseStudy({ study }) {
                 {study.hero.stack.map((shot, i) => (
                   <VisualSlot
                     key={shot.label || shot.alt || i}
-                    {...shot}
                     fit="contain"
                     ratio={study.hero.ratio}
+                    {...shot}
                     className={[styles.stackLeft, styles.stackCenter, styles.stackRight][i]}
                   />
                 ))}

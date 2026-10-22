@@ -79,7 +79,16 @@ export default function DesignBoard({ design }) {
         {ui && (
           <div className={`${styles.tile} ${styles.tileFull}`}>
             <p className={styles.tileLabel}>UI Elements</p>
-            <VisualSlot {...ui} ratio="21 / 6" />
+            {Array.isArray(ui)
+              ? (
+                // several real pieces cut from the design, side by side
+                <div className={styles.uiRow}>
+                  {ui.map((piece, i) => (
+                    <VisualSlot key={piece.caption || i} fit="contain" ratio="auto" {...piece} />
+                  ))}
+                </div>
+              )
+              : <VisualSlot {...ui} ratio="21 / 6" />}
           </div>
         )}
       </div>

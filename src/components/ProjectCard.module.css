@@ -60,6 +60,10 @@
 }
 
 .contain .img {
+  /* tall phone screens stay card-sized; wide screenshots are unaffected */
+  width: auto;
+  max-width: 100%;
+  max-height: 480px;
   height: auto;
   object-fit: contain;
   border-radius: 8px;

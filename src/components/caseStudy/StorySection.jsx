@@ -38,6 +38,16 @@ function Intro({ section, number }) {
 // an image slot, or a small card / flow when the visual is words, not pixels
 function Visual({ visual, ...slotProps }) {
   if (visual.kind === 'note') return <NoteCard {...visual} />
+  // two frames side by side, e.g. original vs. redesign
+  if (visual.kind === 'pair') {
+    return (
+      <div className={styles.pair}>
+        {visual.items.map((item, i) => (
+          <VisualSlot key={item.caption || i} {...slotProps} {...item} />
+        ))}
+      </div>
+    )
+  }
   if (visual.kind === 'flow') {
     return (
       <div className={styles.flowCard}>
@@ -50,7 +60,7 @@ function Visual({ visual, ...slotProps }) {
 }
 
 // one numbered chapter of the story. `layout` picks how its visuals sit:
-// split (text beside a visual, alternating sides), sitemap, design (board),
+// split (text beside a visual, alternating sides), sitemap, personas, design (board),
 // process (flow steps, notes, visual gallery), decisions (small text + screenshot rows),
 // findings (testing results with before/after), showcase (final screens), cards.
 export default function StorySection({ section, number, site, flipped }) {
@@ -77,6 +87,20 @@ export default function StorySection({ section, number, site, flipped }) {
         {section.body && (
           <div className={`${styles.body} ${styles.centered}`}>
             {section.body.map((p) => <p key={p.slice(0, 24)}>{p}</p>)}
+          </div>
+        )}
+
+        {/* long phone screens in a staggered row, the bigger ones up front */}
+        {section.stagger && (
+          <div className={styles.stagger}>
+            {section.stagger.map((shot, i) => (
+              <VisualSlot
+                key={shot.caption || i}
+                ratio="auto"
+                {...shot}
+                className={`${styles.staggerItem} ${shot.size === 'lg' ? styles.staggerLg : ''}`}
+              />
+            ))}
           </div>
         )}
 
@@ -125,10 +149,26 @@ export default function StorySection({ section, number, site, flipped }) {
 
       {layout === 'sitemap' && <Sitemap pages={section.pages} site={site} />}
 
-      {layout === 'design' && <DesignBoard design={section.design} />}
+      {layout === 'personas' && (
+        <div className={styles.personas}>
+          {section.personas.map((p) => <NoteCard key={p.title} {...p} />)}
+        </div>
+      )}
+
+      {layout === 'design' && (
+        <>
+          {section.notes && (
+            <ul className={styles.chips}>
+              {section.notes.map((note) => <li key={note}>{note}</li>)}
+            </ul>
+          )}
+          <DesignBoard design={section.design} />
+        </>
+      )}
 
       {layout === 'process' && (
         <>
+          {section.pages && <Sitemap pages={section.pages} site={section.site || site} />}
           {section.flow && (
             <div className={styles.flowCard}>
               <FlowSteps steps={section.flow} />
@@ -142,7 +182,10 @@ export default function StorySection({ section, number, site, flipped }) {
           {section.gallery?.map((group) => (
             <div key={group.title} className={styles.gallery}>
               <h3 className={styles.smallTitle}>{group.title}</h3>
-              <div className={styles.galleryRow} style={{ '--cols': group.cols || group.items.length }}>
+              <div
+                className={styles.galleryRow}
+                style={{ '--cols': group.cols || group.items.length, maxWidth: group.maxWidth, marginInline: group.maxWidth && 'auto' }}
+              >
                 {group.items.map((item, i) => (
                   <VisualSlot key={item.caption || i} fit="contain" ratio={group.ratio} {...item} />
                 ))}
@@ -160,7 +203,7 @@ export default function StorySection({ section, number, site, flipped }) {
                 <h3 className={styles.smallTitle}>{item.title}</h3>
                 <p>{item.text}</p>
               </div>
-              <VisualSlot {...item.visual} fit="contain" ratio="16 / 10" />
+              <VisualSlot fit="contain" ratio="16 / 10" {...item.visual} />
             </div>
           ))}
         </div>
@@ -220,6 +263,14 @@ export default function StorySection({ section, number, site, flipped }) {
                 )}
             </div>
           ))}
+        </div>
+      )}
+
+      {/* a one-line "so what" that closes the section */}
+      {section.takeaway && (
+        <div className={styles.takeaway}>
+          <p className={styles.placeholderTag}>{section.takeaway.label}</p>
+          <p className={styles.takeawayText}>{section.takeaway.text}</p>
         </div>
       )}
     </motion.section>

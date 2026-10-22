@@ -1,5 +1,6 @@
 import bowlsomeMockup from '../assets/bowlsome-mockup.png'
 import campWoofsMockup from '../assets/camp-woofs-mockup.png'
+import elephaidSplash from '../assets/elephaid/splash.png'
 
 const projects = [
   {
@@ -23,14 +24,15 @@ const projects = [
     slug: 'camp-woofs-wiggles',
   },
   {
-    // PLACEHOLDER: swap in the real project details and image when ready
     id: 3,
-    title: 'Project Three',
-    category: 'Project Type',
-    description: 'A short summary of the project goes here: who it was for, the problem it solved, and what you designed.',
-    tags: ['Skill One', 'Skill Two', 'Tool'],
-    image: null,
-    slug: 'project-three',
+    title: 'Elephaid',
+    category: 'Nonprofit Mobile Redesign',
+    description: 'A mobile redesign for an elephant conservation nonprofit, making its mission easier to explore and giving supporters clear ways to donate or volunteer.',
+    tags: ['UX/UI Design', 'Accessibility', 'Figma'],
+    image: elephaidSplash,
+    // tall phone screen: show it whole on the soft backdrop
+    imageFit: 'contain',
+    slug: 'elephaid',
   },
 ]
 
