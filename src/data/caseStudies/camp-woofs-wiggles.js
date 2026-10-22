@@ -83,6 +83,7 @@ const campWoofs = {
           { hex: '#FFFFFF', use: 'backgrounds' },
         ],
         fontsHref: 'https://fonts.googleapis.com/css2?family=Grandstander:wght@600&family=Roboto:wght@400&display=swap',
+        specimenColor: '#8B5E3C',
         type: [
           { family: 'Grandstander', use: 'headings & navigation', weight: 600 },
           { family: 'Roboto', use: 'body text', weight: 400 },

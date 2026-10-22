@@ -48,7 +48,22 @@ export default function CaseStudy({ study }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, ease: 'easeOut', delay: 0.4 }}
         >
-          <VisualSlot {...study.hero} ratio="4 / 3" />
+          {study.hero.stack
+            ? (
+              // three screens: the middle one in front, the other two peeking out behind
+              <div className={styles.heroStack}>
+                {study.hero.stack.map((shot, i) => (
+                  <VisualSlot
+                    key={shot.label || shot.alt || i}
+                    {...shot}
+                    fit="contain"
+                    ratio={study.hero.ratio}
+                    className={[styles.stackLeft, styles.stackCenter, styles.stackRight][i]}
+                  />
+                ))}
+              </div>
+            )
+            : <VisualSlot {...study.hero} ratio="4 / 3" />}
         </motion.div>
       </header>
 

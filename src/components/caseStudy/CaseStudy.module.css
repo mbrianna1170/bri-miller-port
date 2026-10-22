@@ -415,7 +415,7 @@
   grid-row: span 2;
   font-size: 2.6rem;
   line-height: 1;
-  color: #8B5E3C;
+  color: var(--deep);
 }
 
 .family {
@@ -460,7 +460,7 @@
   order: 2;
 }
 
-.decisionText p {
+.decisionText p:not([class]) {
   margin-top: 0.75rem;
   font-size: 1rem;
   line-height: 1.75;
@@ -643,5 +643,384 @@
   }
   .mobileRow .placeholderTag {
     letter-spacing: 0.15em;
+  }
+}
+
+/* ======================================================================
+   extra pieces first used by bowlsome: stacked hero screens, note cards,
+   step flows, galleries, testing findings, kiosk showcase
+   ====================================================================== */
+
+.centered {
+  margin: 2rem auto 0;
+  text-align: center;
+}
+
+/* hero: three portrait screens, the middle one in front */
+.heroStack {
+  display: grid;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.heroStack > * {
+  grid-area: 1 / 1;
+}
+
+.stackCenter {
+  position: relative;
+  z-index: 2;
+  width: 54%;
+  justify-self: center;
+}
+
+.stackLeft,
+.stackRight {
+  width: 42%;
+  opacity: 0.92;
+}
+
+.stackLeft {
+  justify-self: start;
+  transform: rotate(-5deg) translateY(6%);
+}
+
+.stackRight {
+  justify-self: end;
+  transform: rotate(5deg) translateY(6%);
+}
+
+.heroStack .frame {
+  box-shadow: 0 18px 40px rgba(44, 36, 32, 0.1);
+}
+
+/* note card: a brief or persona told in short lists */
+.noteCard {
+  padding: 2.25rem;
+  background: var(--warm-white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.noteTitle {
+  margin-top: 0.6rem;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--deep);
+}
+
+.noteGroup {
+  margin-top: 1.6rem;
+}
+
+.noteGroup .tileLabel {
+  margin-bottom: 0.6rem;
+}
+
+.noteGroup ul {
+  list-style: none;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--mid);
+}
+
+.noteGroup li::before {
+  content: '*';
+  margin-right: 0.5rem;
+  color: var(--terracotta);
+}
+
+/* step flow: numbered stops that wrap onto new lines */
+.flowCard {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--warm-white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  list-style: none;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.55rem 1.05rem;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  background: var(--cream);
+  font-size: 0.92rem;
+  color: var(--deep);
+}
+
+.stepNum {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--terracotta);
+}
+
+.removed {
+  border-style: dashed;
+  color: var(--light-mid);
+  text-decoration: line-through;
+}
+
+.removed .stepNum {
+  color: var(--light-mid);
+}
+
+.flowCard .caption {
+  margin-top: 1.25rem;
+  text-align: left;
+}
+
+/* small non-clickable notes, each with a coral asterisk */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.75rem;
+  margin-top: 1.75rem;
+  list-style: none;
+  font-size: 0.95rem;
+  color: var(--mid);
+}
+
+.chips li::before {
+  content: '*';
+  margin-right: 0.45rem;
+  color: var(--terracotta);
+  font-weight: 500;
+}
+
+/* a titled row of screens (wireframes, hi-fi screens) */
+.gallery {
+  margin-top: 3.5rem;
+}
+
+.galleryRow {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+/* usability testing */
+.tasks {
+  margin-top: 2.5rem;
+  padding: 1.75rem 2rem;
+  background: var(--warm-white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.tasks ol {
+  columns: 2;
+  column-gap: 2.5rem;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--mid);
+}
+
+.tasks li {
+  break-inside: avoid;
+  margin-bottom: 0.5rem;
+}
+
+.tasks li::marker {
+  color: var(--terracotta);
+  font-size: 0.8rem;
+}
+
+.findings {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin-top: 4.5rem;
+}
+
+.finding {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.finding.flipped {
+  grid-template-columns: 3fr 2fr;
+}
+
+.finding.flipped .decisionText {
+  order: 2;
+}
+
+.findingNum {
+  margin-bottom: 0.6rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+.findingNote {
+  margin-top: 1.25rem;
+}
+
+.findingNote .tileLabel {
+  margin-bottom: 0.4rem;
+}
+
+.decisionText .findingNote p:not([class]) {
+  margin-top: 0;
+}
+
+.findingVisuals {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.findingVisuals .flowCard {
+  margin-top: 0;
+}
+
+/* final showcase: a big screen in the middle, two smaller ones each side */
+.kiosk {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.kioskFeature {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.kiosk > :nth-child(2) { grid-column: 1; grid-row: 1; }
+.kiosk > :nth-child(3) { grid-column: 1; grid-row: 2; }
+.kiosk > :nth-child(4) { grid-column: 3; grid-row: 1; }
+.kiosk > :nth-child(5) { grid-column: 3; grid-row: 2; }
+
+@media (max-width: 960px) {
+  .finding,
+  .finding.flipped {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .finding.flipped .decisionText {
+    order: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .noteCard,
+  .flowCard,
+  .tasks {
+    padding: 1.5rem 1.25rem;
+  }
+  .tasks ol {
+    columns: 1;
+  }
+  .galleryRow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+  .findingVisuals {
+    gap: 0.9rem;
+  }
+  .findings {
+    gap: 3.5rem;
+  }
+  /* big screen on top, the rest two by two underneath */
+  .kiosk {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+  .kiosk > * {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  .kiosk > .kioskFeature {
+    grid-column: 1 / -1 !important;
+    width: 78%;
+    justify-self: center;
+  }
+  .step {
+    font-size: 0.85rem;
+    padding: 0.45rem 0.85rem;
+  }
+}
+
+/* a lone screenshot in a finding stays phone-sized instead of filling the column */
+.findingVisuals > .slot:only-child {
+  max-width: 320px;
+  justify-self: center;
+}
+
+/* finished screens under the design board */
+.boardScreens {
+  max-width: 960px;
+  margin: 1.25rem auto 0;
+}
+
+/* let tiles and small frames shrink on narrow screens instead of pushing wider */
+.board > *,
+.imagery > *,
+.galleryRow > *,
+.findingVisuals > * {
+  min-width: 0;
+}
+
+.placeholder {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+  .imagery .placeholder,
+  .galleryRow .placeholder {
+    padding: 0.6rem;
+    font-size: 0.75rem;
+  }
+  .imagery .placeholderTag,
+  .galleryRow .placeholderTag {
+    letter-spacing: 0.15em;
+  }
+}
+
+@media (max-width: 600px) {
+  /* a single wide visual (e.g. the user flow) keeps the full width */
+  .galleryRow:has(> :only-child) {
+    grid-template-columns: 1fr;
+  }
+  .stackLeft .placeholder,
+  .stackRight .placeholder {
+    font-size: 0.7rem;
+  }
+  .heroStack .placeholderTag {
+    letter-spacing: 0.15em;
+  }
+}
+
+/* keep the little "placeholder" tag on one line in tight frames */
+.placeholderTag {
+  overflow-wrap: normal;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .imagery .placeholderTag {
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
   }
 }
