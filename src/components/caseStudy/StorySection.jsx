@@ -134,10 +134,14 @@ export default function StorySection({ section, number, site, flipped }) {
             ))}
           </div>
         )}
-        {section.link && (
-          <a href={section.link.href} target="_blank" rel="noreferrer" className={styles.pill}>
-            {section.link.text} <span aria-hidden="true">↗</span>
-          </a>
+        {section.links && (
+          <div className={styles.links}>
+            {section.links.map((link) => (
+              <a key={link.href} href={link.href} target="_blank" rel="noreferrer" className={styles.pill}>
+                {link.text} <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
         )}
       </motion.section>
     )

@@ -41,6 +41,11 @@ export default function CaseStudy({ study }) {
             <span className={styles.accent}>{study.highlight}</span>
           </h1>
           <p className={styles.heroIntro}>{study.intro}</p>
+          {study.live && (
+            <a href={study.live} target="_blank" rel="noreferrer" className={styles.pill}>
+              visit the live site <span aria-hidden="true">↗</span>
+            </a>
+          )}
         </motion.div>
         <motion.div
           className={styles.heroMedia}

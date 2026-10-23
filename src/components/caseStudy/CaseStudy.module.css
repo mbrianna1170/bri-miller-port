@@ -550,6 +550,19 @@
   color: var(--warm-white);
 }
 
+/* a row of pills, e.g. live site + code */
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 1rem;
+  margin-top: 1.5rem;
+}
+
+.links .pill {
+  margin-top: 1rem;
+}
+
 .end {
   display: flex;
   flex-wrap: wrap;
