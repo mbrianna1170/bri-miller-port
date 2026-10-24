@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import LoopyArrow from '../components/LoopyArrow'
 import VisualSlot from '../components/caseStudy/VisualSlot'
 import StorySection from '../components/caseStudy/StorySection'
 import projects from '../data/projects'
@@ -85,8 +84,6 @@ export default function CaseStudy({ study }) {
           </div>
         ))}
       </motion.dl>
-
-      <LoopyArrow delay={1} className={styles.arrow} />
 
       {study.sections.map((section, i) => (
         <StorySection
