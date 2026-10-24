@@ -1,9 +1,30 @@
-import wireStartOrder from '../../assets/bowlsome/wire-start-order.png'
+import userFlow from '../../assets/bowlsome/user-flow.webp'
+import wireStartOrder from '../../assets/bowlsome/wire-start-order.webp'
+import wireBowlSize from '../../assets/bowlsome/wire-bowl-size.webp'
+import wireFruits from '../../assets/bowlsome/wire-fruits.webp'
+import wireCartReview from '../../assets/bowlsome/wire-cart-review.webp'
+import hifiStart from '../../assets/bowlsome/hifi-start-order.webp'
+import hifiBowlSize from '../../assets/bowlsome/hifi-bowl-size.webp'
+import hifiFruits from '../../assets/bowlsome/hifi-fruits.webp'
+import hifiToppings from '../../assets/bowlsome/hifi-toppings.webp'
+import hifiCartReview from '../../assets/bowlsome/hifi-cart-review.webp'
+import hifiPayment from '../../assets/bowlsome/hifi-payment-processing.webp'
+import hifiConfirmation from '../../assets/bowlsome/hifi-confirmation.webp'
+import logo from '../../assets/bowlsome/logo.png'
+import illoStrawberry from '../../assets/bowlsome/illo-strawberry.png'
+import illoBlueberries from '../../assets/bowlsome/illo-blueberries.png'
+import illoGranola from '../../assets/bowlsome/illo-granola.png'
+import uiStepPill from '../../assets/bowlsome/ui-step-pill.png'
+import uiCheckbox from '../../assets/bowlsome/ui-checkbox.png'
+import uiCartCard from '../../assets/bowlsome/ui-cart-card.png'
+import uiBackNext from '../../assets/bowlsome/ui-back-next.png'
 
 // bowlsome smoothie case study. same template as camp woofs, with extra room
 // for the process: step flow, wireframes, testing findings, before/after.
 // any visual without a `src` shows up as a labeled placeholder frame:
 // import the real screenshot above and add `src` (and `alt`) to swap it in.
+// screens are bri's adobe xd exports; logo, illustrations and ui pieces are
+// cropped from them, and the palette was sampled from their pixels.
 
 // kiosk artboards are tall portrait screens
 const SCREEN = '5 / 7'
@@ -19,9 +40,9 @@ const bowlsome = {
   hero: {
     ratio: SCREEN,
     stack: [
-      { label: 'fruit selection, hi-fi screen' },
-      { label: 'start order, hi-fi screen' },
-      { label: 'cart review, hi-fi screen' },
+      { src: hifiFruits, alt: 'Select Your Fruits kiosk screen' },
+      { src: hifiStart, alt: 'Bowlsome Smoothie Tap to Start screen' },
+      { src: hifiCartReview, alt: 'Review Your Order kiosk screen' },
     ],
   },
   details: [
@@ -100,17 +121,18 @@ const bowlsome = {
       gallery: [
         {
           title: 'user flow',
-          ratio: '16 / 7',
-          items: [{ label: 'original user flow diagram (site map)' }],
+          ratio: SCREEN,
+          maxWidth: '440px',
+          items: [{ src: userFlow, alt: 'User flow from Home Screen through Order Confirmation, listing the controls on each screen' }],
         },
         {
           title: 'low-fidelity wireframes',
           ratio: SCREEN,
           items: [
             { src: wireStartOrder, alt: 'Start Order wireframe', caption: 'start order' },
-            { label: 'bowl size wireframe', caption: 'bowl size' },
-            { label: 'fruit selection wireframe', caption: 'fruits' },
-            { label: 'cart review wireframe', caption: 'cart review' },
+            { src: wireBowlSize, alt: 'Select Your Bowl Size wireframe', caption: 'bowl size' },
+            { src: wireFruits, alt: 'Select Your Fruits wireframe', caption: 'fruits' },
+            { src: wireCartReview, alt: 'Review Your Order wireframe', caption: 'cart review' },
           ],
         },
       ],
@@ -125,27 +147,38 @@ const bowlsome = {
       ],
       layout: 'design',
       design: {
-        // swap in the real hex values from the prototype, e.g.
-        // palette: [{ hex: '#xxxxxx', use: 'buttons' }, ...], and delete paletteSlot
-        paletteSlot: { label: 'color palette from the prototype (bright greens + dark neutral text)' },
+        // sampled from the exported screens, so each hex may be a shade off the xd file
+        palette: [
+          { hex: '#0CCC4B', use: 'bright green · header & buttons' },
+          { hex: '#384A4B', use: 'dark slate · text & step pill' },
+          { hex: '#F8A637', use: 'orange · bowl illustrations' },
+          { hex: '#E3DFDA', use: 'warm gray · cart cards' },
+          { hex: '#FAF8F6', use: 'off-white · backgrounds' },
+        ],
         fontsHref: 'https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap',
+        specimenColor: '#384A4B',
         type: [
           { family: 'Quicksand', use: 'friendly, rounded, readable', weight: 700 },
         ],
-        logo: { label: 'bowlsome logo' },
+        logo: { src: logo, alt: 'Bowlsome Smoothie logo' },
         imageryLabel: 'Ingredient Illustrations',
         imagery: [
-          { label: 'fruit illustration' },
-          { label: 'topping illustration' },
-          { label: 'add-in illustration' },
+          { src: illoStrawberry, alt: 'Strawberry illustration' },
+          { src: illoBlueberries, alt: 'Blueberries illustration' },
+          { src: illoGranola, alt: 'Granola illustration' },
         ],
-        ui: { label: 'buttons, checkboxes, ingredient cards and selection states' },
+        ui: [
+          { src: uiBackNext, alt: 'Back and Next buttons', caption: 'back & next' },
+          { src: uiStepPill, alt: 'Step 1 of 7 progress pill', caption: 'progress' },
+          { src: uiCheckbox, alt: 'Ingredient checkbox', caption: 'checkbox' },
+          { src: uiCartCard, alt: 'Bowl card with Edit and Remove buttons', caption: 'cart card' },
+        ],
         screens: {
           ratio: SCREEN,
           items: [
-            { label: 'bowl size, hi-fi screen', caption: 'bowl size' },
-            { label: 'fruit selection, hi-fi screen', caption: 'fruits' },
-            { label: 'topping selection, hi-fi screen', caption: 'toppings' },
+            { src: hifiBowlSize, alt: 'Select Your Bowl Size kiosk screen', caption: 'bowl size' },
+            { src: hifiFruits, alt: 'Select Your Fruits kiosk screen', caption: 'fruits' },
+            { src: hifiToppings, alt: 'Select Your Toppings kiosk screen', caption: 'toppings' },
           ],
         },
       },
@@ -221,6 +254,8 @@ const bowlsome = {
               ],
               note: 'the original flow: the crossed-out step was cut, along with the order-name field on cart review',
             },
+            { src: wireCartReview, alt: 'Cart review wireframe with an Enter Name for Order field', caption: 'before: order-name field' },
+            { src: hifiCartReview, alt: 'Final cart review screen without the order-name field', caption: 'after: field removed' },
           ],
         },
       ],
@@ -234,12 +269,12 @@ const bowlsome = {
       ],
       layout: 'showcase',
       ratio: SCREEN,
-      feature: { label: 'bowl customization, hi-fi screen', caption: 'build your bowl' },
+      feature: { src: hifiFruits, alt: 'Select Your Fruits kiosk screen', caption: 'build your bowl' },
       screens: [
-        { label: 'welcome screen', caption: 'welcome' },
-        { label: 'cart review screen', caption: 'cart review' },
-        { label: 'checkout / payment screen', caption: 'checkout' },
-        { label: 'order confirmation screen', caption: 'confirmation' },
+        { src: hifiStart, alt: 'Tap to Start welcome screen', caption: 'welcome' },
+        { src: hifiCartReview, alt: 'Review Your Order screen with Edit and Remove buttons', caption: 'cart review' },
+        { src: hifiPayment, alt: 'Checkout screen showing Payment Processing', caption: 'checkout' },
+        { src: hifiConfirmation, alt: 'Order Confirmation screen', caption: 'confirmation' },
       ],
     },
     {

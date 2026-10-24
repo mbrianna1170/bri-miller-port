@@ -905,6 +905,7 @@
 
 .findingVisuals .flowCard {
   margin-top: 0;
+  grid-column: 1 / -1;
 }
 
 /* final showcase: a big screen in the middle, two smaller ones each side */

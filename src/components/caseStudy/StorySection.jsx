@@ -241,7 +241,11 @@ export default function StorySection({ section, number, site, flipped }) {
                     </div>
                   ))}
                 </div>
-                <div className={styles.findingVisuals} style={{ '--cols': item.visuals.length }}>
+                {/* a flow spans the whole row, so only screens count as columns */}
+                <div
+                  className={styles.findingVisuals}
+                  style={{ '--cols': item.visuals.filter((v) => v.kind !== 'flow').length || 1 }}
+                >
                   {item.visuals.map((v, j) => (
                     <Visual key={v.caption || j} visual={v} fit="contain" ratio={section.ratio} />
                   ))}
