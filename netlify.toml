@@ -1,0 +1,16 @@
+# netlify reads this when it builds the site from github
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # vite 8 needs node 20.19+ or 22.12+
+  NODE_VERSION = "22"
+
+# case study pages (/elephaid, /bowlsome-smoothie, ...) aren't real files,
+# so any path without a file behind it gets index.html and the app picks the page.
+# real files like /resume.pdf are still served as themselves.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
