@@ -58,7 +58,7 @@ Personal portfolio for Bri Miller, a UX/UI designer. React 19 + Vite, styled wit
 
 - Resume: `public/resume.pdf` is a copy of `Desktop/Resume/Bri_Miller/Bri_Miller_UX_2026.pdf`. The nav, contact and footer links all download it as `Bri_Miller_Resume.pdf` (no new tab). Re-copy it when Bri updates the resume.
 
-- No phone number on the site (spam). Email + LinkedIn + resume only.
+- No phone number on the site (spam). Email + LinkedIn + resume only. The downloadable resume PDF does include the phone number; Bri chose to keep it there.
 - Copy-email-on-click was offered for the mailto link; Bri said "not yet."
 - "Selected/Featured": Bri chose **FEATURED WORK**.
 
