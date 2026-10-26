@@ -10,7 +10,7 @@ export default function Footer() {
       <p className={styles.copy}>© {new Date().getFullYear()} Bri Miller · All rights reserved</p>
       <nav className={styles.links}>
         <a href="https://www.linkedin.com/in/millerbri08/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="/resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+        <a href="/resume.pdf" download="Bri_Miller_Resume.pdf">Resume</a>
         <a href="/#work">Work</a>
       </nav>
     </footer>

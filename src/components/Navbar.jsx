@@ -17,7 +17,7 @@ export default function Navbar() {
         <a href="/#work">work</a>
         <a href="/#about">about</a>
         <a href="/#contact">contact</a>
-        <a href="/resume.pdf" target="_blank" rel="noreferrer" className={styles.resume}>
+        <a href="/resume.pdf" download="Bri_Miller_Resume.pdf" className={styles.resume}>
           resume
         </a>
       </nav>

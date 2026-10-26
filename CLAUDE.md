@@ -51,10 +51,12 @@ Personal portfolio for Bri Miller, a UX/UI designer. React 19 + Vite, styled wit
 - **Hero:** one-line headline "hi, i'm bri and i design experiences people [return to. / trust. / enjoy.]", capped ~46px. The rotating word has reserved width so the line doesn't shift. On < 760px it wraps. Tagline + LoopyArrow below.
 - **Featured Work:** `src/data/projects.js` drives large alternating image/info blocks (`ProjectCard`). Wide screenshots use `imageFit: 'contain'`. Project 3 is Elephaid (tall phone splash screen, height-capped in the card).
 - **About:** banner, then photo (coral ring) left + text right; stacks on mobile. Headline "curious about the why. creative with the how." Then the small arrow, SKILLS & TOOLS, and an infinite skills marquee (pauses on hover, respects reduced motion).
-- **Contact:** banner, then three lines: say hello (mailto), connect (LinkedIn), resume (view pdf ↗).
+- **Contact:** banner, then three lines: say hello (mailto), connect (LinkedIn), resume (download pdf ↓).
 - **Footer:** logo left, © line center, LINKEDIN · RESUME · WORK right, all small uppercase.
 
 ## Decisions already made
+
+- Resume: `public/resume.pdf` is a copy of `Desktop/Resume/Bri_Miller/Bri_Miller_UX_2026.pdf`. The nav, contact and footer links all download it as `Bri_Miller_Resume.pdf` (no new tab). Re-copy it when Bri updates the resume.
 
 - No phone number on the site (spam). Email + LinkedIn + resume only.
 - Copy-email-on-click was offered for the mailto link; Bri said "not yet."
@@ -62,7 +64,6 @@ Personal portfolio for Bri Miller, a UX/UI designer. React 19 + Vite, styled wit
 
 ## Open to-dos
 
-- `public/resume.pdf` doesn't exist yet. The nav, contact and footer resume links all point to `/resume.pdf`.
 - **Case studies:** template in `src/pages/CaseStudy.jsx` + `src/components/caseStudy/`, content in `src/data/caseStudies/<slug>.js` (listed in `index.js`). Pages load at `/<slug>` via a plain pathname check in `App.jsx` (no router). Camp Woofs & Wiggles is built; its reflection cards, UI-elements crop, design-decision screenshots and most final screens are labeled placeholders, and lines marked DRAFT need Bri's wording. Bowlsome Smoothie is built (stacked 3-screen hero, persona/brief note cards, step flow, testing findings with before/after, kiosk showcase); screens, wireframes and user flow are Bri's Adobe XD exports (.webp in `src/assets/bowlsome/`); logo, illustrations and UI pieces are cropped from them and the palette was sampled from their pixels (may be a shade off). Still placeholders: the Finding 1 before/after (two sizes highlighted vs. one) and the Finding 2 annotated Next-button screen. No hi-fi Smoothie Base or Add-Ins screens were supplied, yet the hi-fi steps still read "of 7". Its usability sheet has a participant's real name: never put names on the site. Elephaid (project 3) is built from Bri's Figma file "Elephaid 2" (fileKey `Qg3Vi4QmRwYsa2f1HAmN0s`): screens, palette, fonts, logo, photos and UI crops are real exports in `src/assets/elephaid/`; only the "original" before-screen is a placeholder (the file has no before designs). No Volunteer screen exists in the file, so don't show one. Hosting will need an SPA fallback (every path serves `index.html`).
 - Elephaid card image is the splash screen; a nicer phone mockup could replace it later.
 - Large images (~3.7MB each) should be compressed before launch.
