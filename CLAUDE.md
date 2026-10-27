@@ -49,7 +49,7 @@ Personal portfolio for Bri Miller, a UX/UI designer. React 19 + Vite, styled wit
 
 - **Navbar:** logo left, `work · about · contact · resume` right (resume is a pill). Fixed, but hides while scrolling down and slides back in on scroll up (Bri chose this over always-fixed or a back-to-top button); off the very top it gets a translucent cream background. Bri wants this height kept as-is.
 - **Hero:** one-line headline "hi, i'm bri and i design experiences people [return to. / trust. / enjoy.]", capped ~46px. The rotating word has reserved width so the line doesn't shift. On < 760px it wraps. Tagline + LoopyArrow below.
-- **Featured Work:** `src/data/projects.js` drives large alternating image/info blocks (`ProjectCard`). Wide screenshots use `imageFit: 'contain'`. Project 3 is Elephaid (tall phone splash screen, height-capped in the card).
+- **Featured Work:** `src/data/projects.js` drives large alternating image/info blocks (`ProjectCard`). Wide screenshots use `imageFit: 'contain'`. Order (Bri's choice): 01 Elephaid (tall phone splash screen, height-capped in the card), 02 Bowlsome Smoothie, 03 Camp Woofs & Wiggles. Case study "next" links follow this order.
 - **About:** banner, then photo (coral ring) left + text right; stacks on mobile. Headline "curious about the why. creative with the how." Then the small arrow, SKILLS & TOOLS, and an infinite skills marquee (pauses on hover, respects reduced motion).
 - **Contact:** banner, then three lines: say hello (click copies the email and shows "copied!" for 2s; no mailto), connect (LinkedIn), resume (download pdf ↓).
 - **Footer:** logo left, © line center, LINKEDIN · RESUME · WORK right, all small uppercase.
