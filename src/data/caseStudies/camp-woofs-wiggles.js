@@ -1,4 +1,4 @@
-import heroMockup from '../../assets/camp-woofs-mockup.png'
+import heroMockup from '../../assets/camp-woofs-mockup.webp'
 import homeDesktop from '../../assets/camp-woofs/index-desktop.png'
 import aboutDesktop from '../../assets/camp-woofs/about-desktop.png'
 import servicesDesktop from '../../assets/camp-woofs/services-desktop.png'

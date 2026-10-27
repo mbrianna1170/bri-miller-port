@@ -56,6 +56,8 @@ Personal portfolio for Bri Miller, a UX/UI designer. React 19 + Vite, styled wit
 
 ## Decisions already made
 
+- Images: keep files at roughly 2-3x the size they display at, saved as WebP at ~0.9 quality (bri.webp, bowlsome-mockup.webp, camp-woofs-mockup.webp were shrunk this way from 2-4MB originals; Bri wanted no visible quality loss).
+
 - Resume: `public/resume.pdf` is a copy of `Desktop/Resume/Bri_Miller/Bri_Miller_UX_2026.pdf`. The nav, contact and footer links all download it as `Bri_Miller_Resume.pdf` (no new tab). Re-copy it when Bri updates the resume.
 
 - No phone number on the site (spam). Email + LinkedIn + resume only. The downloadable resume PDF does include the phone number; Bri chose to keep it there.
@@ -66,4 +68,3 @@ Personal portfolio for Bri Miller, a UX/UI designer. React 19 + Vite, styled wit
 
 - **Case studies:** template in `src/pages/CaseStudy.jsx` + `src/components/caseStudy/`, content in `src/data/caseStudies/<slug>.js` (listed in `index.js`). Pages load at `/<slug>` via a plain pathname check in `App.jsx` (no router). Camp Woofs & Wiggles is built; its reflection cards, UI-elements crop, design-decision screenshots and most final screens are labeled placeholders, and lines marked DRAFT need Bri's wording. Bowlsome Smoothie is built (stacked 3-screen hero, persona/brief note cards, step flow, testing findings with before/after, kiosk showcase); screens, wireframes and user flow are Bri's Adobe XD exports (.webp in `src/assets/bowlsome/`); logo, illustrations and UI pieces are cropped from them and the palette was sampled from their pixels (may be a shade off). Still placeholders: the Finding 1 before/after (two sizes highlighted vs. one) and the Finding 2 annotated Next-button screen. No hi-fi Smoothie Base or Add-Ins screens were supplied, yet the hi-fi steps still read "of 7". Its usability sheet has a participant's real name: never put names on the site. Elephaid (project 3) is built from Bri's Figma file "Elephaid 2" (fileKey `Qg3Vi4QmRwYsa2f1HAmN0s`): screens, palette, fonts, logo, photos and UI crops are real exports in `src/assets/elephaid/`; only the "original" before-screen is a placeholder (the file has no before designs). No Volunteer screen exists in the file, so don't show one. Hosting is Netlify (connected to GitHub): `netlify.toml` sets the build, Node 22, and the SPA fallback that serves `index.html` for case study paths.
 - Elephaid card image is the splash screen; a nicer phone mockup could replace it later.
-- Large images (~3.7MB each) should be compressed before launch.

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import briPhoto from '../assets/bri.jpg'
+import briPhoto from '../assets/bri.webp'
 import LoopyArrow from './LoopyArrow'
 import styles from './About.module.css'
 

@@ -1,5 +1,5 @@
-import bowlsomeMockup from '../assets/bowlsome-mockup.png'
-import campWoofsMockup from '../assets/camp-woofs-mockup.png'
+import bowlsomeMockup from '../assets/bowlsome-mockup.webp'
+import campWoofsMockup from '../assets/camp-woofs-mockup.webp'
 import elephaidSplash from '../assets/elephaid/splash.png'
 
 const projects = [
