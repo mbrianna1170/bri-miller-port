@@ -1,6 +1,6 @@
 import bowlsomeMockup from '../assets/bowlsome-mockup.webp'
 import campWoofsMockup from '../assets/camp-woofs-mockup.webp'
-import elephaidSplash from '../assets/elephaid/splash.png'
+import elephaidMockup from '../assets/elephaid/card-mockup.webp'
 
 // shown on the homepage in this order (and case study "next" links follow it)
 const projects = [
@@ -10,9 +10,11 @@ const projects = [
     category: 'Nonprofit Mobile Redesign',
     description: 'A mobile redesign for an elephant conservation nonprofit, making its mission easier to explore and giving supporters clear ways to donate or volunteer.',
     tags: ['UX/UI Design', 'Accessibility', 'Figma'],
-    image: elephaidSplash,
-    // tall phone screen: show it whole on the soft backdrop
-    imageFit: 'contain',
+    image: elephaidMockup,
+    // square phone mockup on flat teal: shown whole, with the same teal
+    // filling the rest of the card so the edges disappear
+    imageFit: 'fill',
+    imageBg: '#176F79',
     slug: 'elephaid',
   },
   {

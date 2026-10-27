@@ -19,7 +19,8 @@ export default function ProjectCard({ project, index }) {
     >
       <a
         href={href}
-        className={`${styles.media} ${project.imageFit === 'contain' ? styles.contain : ''}`}
+        className={`${styles.media} ${styles[project.imageFit] || ''}`}
+        style={project.imageBg ? { background: project.imageBg } : undefined}
         aria-label={`${project.title} case study`}
       >
         {project.image
