@@ -25,7 +25,7 @@ export default function DesignBoard({ design }) {
           <p className={styles.tileLabel}>Color</p>
           {palette
             ? (
-              <ul className={styles.swatches}>
+              <ul className={styles.swatches} style={{ '--n': palette.length }}>
                 {palette.map(({ hex, use }) => (
                   <li key={hex} className={styles.swatch}>
                     <span className={styles.chip} style={{ background: hex }} />

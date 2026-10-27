@@ -182,7 +182,8 @@ const elephaid = {
         // the color styles defined in the figma file
         palette: [
           { hex: '#E76F51', use: 'soft coral · buttons & icons' },
-          { hex: '#C3DBF8', use: 'baby blue · nav bar' },
+          { hex: '#1F707A', use: 'deep teal · active nav & confirmation' },
+          { hex: '#E3F5F7', use: 'pale teal · nav highlight & info cards' },
           { hex: '#1A1A1A', use: 'rich black · headings' },
           { hex: '#54545A', use: 'charcoal' },
           { hex: '#6B6B6B', use: 'medium gray' },
