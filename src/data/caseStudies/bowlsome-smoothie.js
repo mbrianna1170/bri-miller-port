@@ -226,16 +226,6 @@ const bowlsome = {
           ],
         },
         {
-          title: 'unclear cart navigation',
-          notes: [
-            { label: 'What happened', text: 'One participant expected an explicit Add to Cart action but encountered a Next button instead. She eventually reached the cart review screen but wasn’t sure what would happen.' },
-            { label: 'What I learned', text: 'This highlighted an opportunity to make button labels more descriptive.' },
-          ],
-          visuals: [
-            { src: uiBackNext, alt: 'Back and Next buttons from the kiosk', ratio: 'auto', caption: 'the shared Back / Next buttons: she expected “Add to Cart”' },
-          ],
-        },
-        {
           title: 'missing and unnecessary steps',
           notes: [
             { label: 'What happened', text: 'Some elements were not fully aligned with the testing scenario. For example, a required topping was initially missing, and certain extra steps created confusion.' },
