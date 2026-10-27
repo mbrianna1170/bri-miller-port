@@ -1141,16 +1141,27 @@
 }
 
 /* final showcase: full-length screens side by side, nudged up and down */
+/* rows of up to four screens, bigger ones a touch wider; a short last row centers */
 .stagger {
-  display: grid;
-  grid-template-columns: 1fr 1.25fr 1fr 1.25fr 1fr;
-  align-items: start;
-  gap: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem 1.25rem;
   width: 100%;
   margin-top: 3rem;
   padding: 3rem 2rem;
   border-radius: 14px;
   background: linear-gradient(135deg, var(--card-bg), #F7DCCD);
+}
+
+.staggerItem {
+  flex: 0 0 21%;
+  min-width: 0;
+}
+
+.staggerItem.staggerLg {
+  flex-basis: 25%;
 }
 
 .staggerItem .frame {
@@ -1170,16 +1181,20 @@
   .personas {
     grid-template-columns: 1fr;
   }
-  .stagger {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+  .staggerItem,
+  .staggerItem.staggerLg {
+    flex-basis: 29%;
   }
 }
 
 @media (max-width: 600px) {
   .stagger {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
     padding: 1.5rem 1rem;
     gap: 0.9rem;
+  }
+  .staggerItem,
+  .staggerItem.staggerLg {
+    flex-basis: calc(50% - 0.45rem);
   }
   .staggerItem:nth-child(odd) {
     margin-top: 0;

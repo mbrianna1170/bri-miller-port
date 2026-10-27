@@ -4,7 +4,9 @@ import home from '../../assets/elephaid/home.png'
 import homePhone from '../../assets/elephaid/home-phone.png'
 import about from '../../assets/elephaid/about.png'
 import howToHelp from '../../assets/elephaid/how-to-help.png'
-import donation from '../../assets/elephaid/donation.png'
+import donation from '../../assets/elephaid/donation.webp'
+import donationConfirmation from '../../assets/elephaid/donation-confirmation.png'
+import volunteer from '../../assets/elephaid/volunteer.png'
 import logo from '../../assets/elephaid/logo.png'
 import amountCard from '../../assets/elephaid/ui-amount-card.png'
 import volunteerCard from '../../assets/elephaid/ui-volunteer-card.png'
@@ -16,7 +18,7 @@ import photoTusks from '../../assets/elephaid/photo-tusks.png'
 
 // elephaid case study. screens, colors, fonts and ui pieces come from bri's
 // Elephaid 2 figma file ("Portfolio •" frames); the original home screen
-// was supplied by bri. how-to-help is still the older export (old nav bar).
+// was supplied by bri.
 
 // phone screens cropped to their top
 const PHONE = '9 / 19'
@@ -113,8 +115,8 @@ const elephaid = {
         { name: 'Home', notes: ['urgent rescue story', 'recent impact', 'community stories'] },
         { name: 'About', notes: ['who we are', 'what we do'] },
         { name: 'How to Help', notes: ['donate', 'volunteer', 'spread awareness'] },
-        { name: 'Donate', notes: ['make a donation'] },
-        { name: 'Volunteer', notes: ['nav bar destination'] },
+        { name: 'Donate', notes: ['make a donation', 'confirmation'] },
+        { name: 'Volunteer', notes: ['ways to volunteer', 'sign-up form'] },
       ],
       gallery: [
         {
@@ -210,7 +212,7 @@ const elephaid = {
       headline: 'turning compassion',
       highlight: 'into action.',
       body: [
-        'The final designs bring together a more organized mobile experience that introduces Elephaid’s mission and provides clear ways to support it. Visitors can explore the organization, read about its conservation work, discover ways to help, and navigate to the donation experience.',
+        'The final designs bring together a more organized mobile experience that introduces Elephaid’s mission and provides clear ways to support it. Visitors can explore the organization, read about its conservation work, discover ways to help, sign up to volunteer, and move through a donation to its confirmation screen.',
         'The donation screen includes preset donation amounts, a custom amount option, monthly contribution selection, and payment details. Content about elephant rescue and conservation impact helps visitors understand why their contributions matter.',
       ],
       layout: 'showcase',
@@ -220,6 +222,8 @@ const elephaid = {
         { src: about, alt: 'About Elephaid screen', caption: 'about' },
         { src: howToHelp, alt: 'How to Help screen', caption: 'how to help', size: 'lg' },
         { src: donation, alt: 'Make a Donation screen', caption: 'make a donation' },
+        { src: donationConfirmation, alt: 'Donation confirmation screen: Thank you for helping elephants', caption: 'confirmation' },
+        { src: volunteer, alt: 'Volunteer screen with ways to volunteer and a sign-up form', caption: 'volunteer', size: 'lg' },
       ],
     },
     {
