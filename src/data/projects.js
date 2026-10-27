@@ -11,10 +11,10 @@ const projects = [
     description: 'A mobile redesign for an elephant conservation nonprofit, making its mission easier to explore and giving supporters clear ways to donate or volunteer.',
     tags: ['UX/UI Design', 'Accessibility', 'Figma'],
     image: elephaidMockup,
-    // square phone mockup on flat teal: shown whole, with the same teal
+    // two-phone mockup on flat teal: shown whole, with the same teal
     // filling the rest of the card so the edges disappear
     imageFit: 'fill',
-    imageBg: '#176F79',
+    imageBg: '#186F78',
     slug: 'elephaid',
   },
   {
