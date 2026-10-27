@@ -217,9 +217,9 @@ const bowlsome = {
             { label: 'What happened', text: 'One participant changed her bowl size, but the previously selected option remained highlighted.' },
             { label: 'What changed', text: 'I revised the selection interaction using component states so only one bowl size could be active at a time.' },
           ],
+          // no screenshots of the selection states exist, so show where it happened
           visuals: [
-            { label: 'bowl size screen, two sizes highlighted', caption: 'before' },
-            { label: 'bowl size screen, one active state', caption: 'after' },
+            { src: hifiBowlSize, alt: 'Select Your Bowl Size kiosk screen', caption: 'where it happened: the bowl size step' },
           ],
         },
         {
@@ -229,7 +229,7 @@ const bowlsome = {
             { label: 'What I learned', text: 'This highlighted an opportunity to make button labels more descriptive.' },
           ],
           visuals: [
-            { label: 'annotated screenshot: the Next button before cart review', caption: 'where it got confusing' },
+            { src: uiBackNext, alt: 'Back and Next buttons from the kiosk', ratio: 'auto', caption: 'the shared Back / Next buttons: she expected “Add to Cart”' },
           ],
         },
         {
