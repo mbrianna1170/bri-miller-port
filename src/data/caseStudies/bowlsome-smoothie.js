@@ -5,6 +5,7 @@ import wireFruits from '../../assets/bowlsome/wire-fruits.webp'
 import wireCartReview from '../../assets/bowlsome/wire-cart-review.webp'
 import hifiStart from '../../assets/bowlsome/hifi-start-order.webp'
 import hifiBowlSize from '../../assets/bowlsome/hifi-bowl-size.webp'
+import hifiBowlSizeSelected from '../../assets/bowlsome/hifi-bowl-size-selected.webp'
 import hifiFruits from '../../assets/bowlsome/hifi-fruits.webp'
 import hifiToppings from '../../assets/bowlsome/hifi-toppings.webp'
 import hifiCartReview from '../../assets/bowlsome/hifi-cart-review.webp'
@@ -214,12 +215,14 @@ const bowlsome = {
         {
           title: 'bowl selection feedback',
           notes: [
-            { label: 'What happened', text: 'One participant changed her bowl size, but the previously selected option remained highlighted.' },
-            { label: 'What changed', text: 'I revised the selection interaction using component states so only one bowl size could be active at a time.' },
+            { label: 'What happened', text: 'When one participant wanted to change her bowl size, she first had to unselect her original choice before she could pick a new one. Nothing on the screen told her that, and it added an unnecessary step.' },
+            { label: 'What changed', text: 'I revised the selection interaction using component states so the highlight moves to whichever bowl is tapped. Only one size can be active at a time, and switching sizes takes a single tap.' },
           ],
-          // no screenshots of the selection states exist, so show where it happened
+          // original screen, an arrow, then the revised one with a size selected
+          arrow: true,
           visuals: [
-            { src: hifiBowlSize, alt: 'Select Your Bowl Size kiosk screen', caption: 'where it happened: the bowl size step' },
+            { src: hifiBowlSize, alt: 'Original Select Your Bowl Size screen', caption: 'before: unselect, then choose again' },
+            { src: hifiBowlSizeSelected, alt: 'Revised bowl size screen with Medium highlighted', caption: 'after: one tap switches the size' },
           ],
         },
         {

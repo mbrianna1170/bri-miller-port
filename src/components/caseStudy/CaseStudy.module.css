@@ -934,6 +934,19 @@
   align-items: start;
 }
 
+/* before → after: two screens with the hand-drawn arrow between them */
+.findingVisuals.withArrow {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+}
+
+/* the loopy arrow points down by default, so turn it to point right */
+.findingArrow {
+  width: 52px;
+  color: var(--terracotta);
+  transform: rotate(-90deg);
+}
+
 .findingVisuals .flowCard {
   margin-top: 0;
   grid-column: 1 / -1;

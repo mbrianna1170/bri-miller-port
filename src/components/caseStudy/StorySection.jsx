@@ -1,4 +1,6 @@
+import { Fragment } from 'react'
 import { motion } from 'framer-motion'
+import LoopyArrow from '../LoopyArrow'
 import VisualSlot from './VisualSlot'
 import Sitemap from './Sitemap'
 import DesignBoard from './DesignBoard'
@@ -247,12 +249,18 @@ export default function StorySection({ section, number, site, flipped }) {
                   ))}
                 </div>
                 {/* a flow spans the whole row, so only screens count as columns */}
+                {/* `arrow` puts the loopy arrow between a before and an after */}
                 <div
-                  className={styles.findingVisuals}
+                  className={`${styles.findingVisuals} ${item.arrow ? styles.withArrow : ''}`}
                   style={{ '--cols': item.visuals.filter((v) => v.kind !== 'flow').length || 1 }}
                 >
                   {item.visuals.map((v, j) => (
-                    <Visual key={v.caption || j} visual={v} fit="contain" ratio={section.ratio} />
+                    <Fragment key={v.caption || j}>
+                      {item.arrow && j > 0 && (
+                        <LoopyArrow onView delay={0.3} className={styles.findingArrow} />
+                      )}
+                      <Visual visual={v} fit="contain" ratio={section.ratio} />
+                    </Fragment>
                   ))}
                 </div>
               </div>
