@@ -38,10 +38,10 @@ function Intro({ section, number }) {
 // an image slot, or a small card / flow when the visual is words, not pixels
 function Visual({ visual, ...slotProps }) {
   if (visual.kind === 'note') return <NoteCard {...visual} />
-  // two frames side by side, e.g. original vs. redesign
+  // frames side by side, e.g. original vs. redesign (two or three across)
   if (visual.kind === 'pair') {
     return (
-      <div className={styles.pair}>
+      <div className={styles.pair} style={{ '--n': visual.items.length }}>
         {visual.items.map((item, i) => (
           <VisualSlot key={item.caption || i} {...slotProps} {...item} />
         ))}
@@ -67,8 +67,13 @@ export default function StorySection({ section, number, site, flipped }) {
   const { layout } = section
 
   if (layout === 'split') {
+    // three screens side by side need more room than the text
+    const wide = section.visual.kind === 'pair' && section.visual.items.length > 2
     return (
-      <motion.section className={`${styles.section} ${styles.split} ${flipped ? styles.flipped : ''}`} {...fadeUp}>
+      <motion.section
+        className={`${styles.section} ${styles.split} ${flipped ? styles.flipped : ''} ${wide ? styles.splitWide : ''}`}
+        {...fadeUp}
+      >
         <Intro section={section} number={number} />
         <div className={styles.splitVisual}>
           <Visual visual={section.visual} ratio="4 / 5" />

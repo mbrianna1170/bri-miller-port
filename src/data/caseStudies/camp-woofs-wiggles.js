@@ -168,10 +168,11 @@ const campWoofs = {
       highlight: 'the next project.',
       layout: 'cards',
       items: [
-        { title: 'lessons learned', placeholder: 'what surprised you, or what you’d do differently' },
-        { title: 'front-end development', placeholder: 'what it was like building the site yourself with html, css and bootstrap' },
-        { title: 'ai-assisted coding', placeholder: 'how you used chatgpt, where it helped, and where you stepped in' },
-        { title: 'future improvements', placeholder: 'what you’d add or change with more time' },
+        // DRAFT: all four cards are starter copy for bri to reword
+        { title: 'lessons learned', text: 'Designing and building the same project showed me how quickly decisions on paper meet real constraints in code. Spacing, image sizes, and how the service cards stack on a phone all needed a second look once the site was running in a browser.' },
+        { title: 'front-end development', text: 'Building the site myself with HTML, CSS, and Bootstrap helped me understand how my layouts actually come together. Bootstrap’s grid handled the responsive structure, and my own styles on top of it kept the playful look from the style guide.' },
+        { title: 'ai-assisted coding', text: 'I used ChatGPT as a coding partner: to explain unfamiliar code, troubleshoot layout issues, and speed up repetitive pieces. I reviewed and adjusted what it suggested so the site matched my design and I understood how it worked.' },
+        { title: 'future improvements', text: 'With more time, I’d turn “Book Now” into a real booking flow instead of a link to the contact page, test the site with pet owners, and check accessibility details like color contrast and keyboard navigation.' },
       ],
     },
   ],

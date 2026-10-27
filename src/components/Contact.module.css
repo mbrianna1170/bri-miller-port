@@ -32,3 +32,38 @@
 .line a:hover {
   color: var(--terracotta);
 }
+
+/* the email: looks like the other links, copies on click */
+.copy {
+  position: relative;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid var(--terracotta);
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.copy:hover {
+  color: var(--terracotta);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.copied {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--terracotta);
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+}

@@ -1,5 +1,7 @@
+import originalHome from '../../assets/elephaid/original-home.webp'
 import splash from '../../assets/elephaid/splash.png'
 import home from '../../assets/elephaid/home.png'
+import homePhone from '../../assets/elephaid/home-phone.png'
 import about from '../../assets/elephaid/about.png'
 import howToHelp from '../../assets/elephaid/how-to-help.png'
 import donation from '../../assets/elephaid/donation.png'
@@ -12,12 +14,14 @@ import photoKesi from '../../assets/elephaid/photo-kesi.png'
 import photoHerd from '../../assets/elephaid/photo-herd.png'
 import photoTusks from '../../assets/elephaid/photo-tusks.png'
 
-// elephaid case study. every screen, color, font and ui piece here was
-// exported from bri's Elephaid 2 figma file; only the "original" screen
-// is a placeholder, since the file has no before designs.
+// elephaid case study. screens, colors, fonts and ui pieces come from bri's
+// Elephaid 2 figma file ("Portfolio •" frames); the original home screen
+// was supplied by bri. how-to-help is still the older export (old nav bar).
 
 // phone screens cropped to their top
 const PHONE = '9 / 19'
+// whole phone screens side by side in the before/after
+const TRIO = '9 / 19.5'
 
 const elephaid = {
   slug: 'elephaid',
@@ -49,13 +53,16 @@ const elephaid = {
       body: [
         'Elephaid’s original experience presented usability concerns around navigation, readability, and the clarity of important actions.',
         'The challenge was to rethink how visitors interact with the organization, making it easier to understand its mission and find meaningful ways to contribute. I wanted the redesign to feel approachable while helping visitors move confidently between learning about the cause and taking action.',
+        // DRAFT: from bri's description of the before/after
+        'The original combined the brand introduction and the home page into a single screen. The redesign splits them in two: a splash screen that introduces the brand, and a personalized home screen that greets supporters by name and shares updates on elephants their donations have helped.',
       ],
       layout: 'split',
       visual: {
         kind: 'pair',
         items: [
-          { label: 'original Elephaid screen (only if you have one)', caption: 'original', ratio: PHONE },
-          { src: home, alt: 'Redesigned Elephaid Home screen', fit: 'top', caption: 'redesign', ratio: PHONE },
+          { src: originalHome, alt: 'Original Elephaid home screen: Help Us Help Them headline over an elephant photo, Learn More button', caption: 'original', fit: 'contain', ratio: TRIO },
+          { src: splash, alt: 'Redesigned Elephaid splash screen', caption: 'redesign · splash', fit: 'contain', ratio: TRIO },
+          { src: homePhone, alt: 'Redesigned Elephaid home screen greeting Jenna by name', caption: 'redesign · home', fit: 'contain', ratio: TRIO },
         ],
       },
     },
@@ -114,7 +121,7 @@ const elephaid = {
           title: 'the nav bar, on every screen',
           ratio: 'auto',
           maxWidth: '560px',
-          items: [{ src: navBar, alt: 'Elephaid nav bar: Home, About, How to Help, Donate, Volunteer' }],
+          items: [{ src: navBar, alt: 'Elephaid nav bar: Home, About, Help, Donate, Volunteer, with Home highlighted' }],
         },
         {
           title: 'home & how to help',
